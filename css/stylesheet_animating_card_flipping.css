@@ -1,0 +1,60 @@
+html {
+	box-sizing: border-box;
+	font-size: 	100%;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p {
+	margin: 	0;
+	padding: 	0;
+	text-align: center;
+}
+
+/*base style*/
+
+.wrapper{
+	width: 100%;
+	max-width: 960px;
+	margin: 0px auto;
+	background-color: #eee;
+
+}
+
+.deck{
+	width: 100%;
+	background-color: mistyrose;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	padding:10px;
+	justify-content: space-around;
+}
+.deck_item{
+	margin: 5px;
+}
+
+.front{
+	position: absolute;
+}
+
+.back{
+	transform: rotateY(90deg);
+}
+
+.deck_item:hover .front{
+	animation: flip .5s ease-in forwards;
+}
+
+.deck_item:hover .back{
+	animation: flip .5s .5s ease-out forwards reverse;
+}
+
+@keyframes flip{
+
+	0% {transform:rotateY(0deg);}
+	100%{transform:rotateY(90deg);}
+}
+
